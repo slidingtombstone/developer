@@ -11,8 +11,7 @@ dnf update --assumeyes &&
     dnf update --assumeyes &&
     dnf install --assumeyes util-linux-user &&
     adduser user &&
-    mkdir /workspace &&
-    chown user:user /workspace &&
+    dnf install --assumeyes openssh-clients &&
     ls -1 /opt/docker/bin | while read FILE
     do
         cp /opt/docker/bin/${FILE} /usr/local/bin/${FILE%.*} &&
