@@ -13,8 +13,7 @@ then
     echo There are untracked files that are not ignored &&
         exit 66
 else
-    MASTER_BRANCH="${1}" &&
-        git fetch upstream "${MASTER_BRANCH}" &&
+    git fetch upstream "${MASTER_BRANCH}" &&
         git checkout -b scratch/$(uuidgen) &&
         git checkout --patch "upstream/${MASTER_BRANCH}" &&
         git commit &&
